@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QMessageBox
 from PyQt5.uic import loadUi
 
@@ -9,7 +9,7 @@ class Login(QDialog):
         loadUi("ui/loginForm.ui", self)
         self.loginForm_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
         self.loginForm_loginButton.clicked.connect(self.loginFunction)        
-
+    
     def loginFunction(self):
         Loginmsg = QMessageBox()
 
@@ -43,5 +43,7 @@ widget = QtWidgets.QStackedWidget()
 widget.addWidget(loginWindow)
 widget.setFixedWidth(400)
 widget.setFixedHeight(600)
+widget.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+widget.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 widget.show()
 app.exec()
