@@ -6,25 +6,219 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>504</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 0, 0);</string>
+  </property>
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>130</y>
-     <width>241</width>
-     <height>91</height>
+     <x>0</x>
+     <y>0</y>
+     <width>504</width>
+     <height>604</height>
     </rect>
    </property>
-   <property name="text">
-    <string>TextLfawfdawfawfawabel</string>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
    </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>2</y>
+      <width>500</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/loginform/createbackground.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>380</y>
+      <width>65</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 300 10pt &quot;Segoe UI Light&quot;;
+  	letter-spacing: 1px;	
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="registerFrame_submitButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>480</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: rgb(232, 224, 224);
+  font: 300 10pt &quot;Segoe UI Light&quot;;
+  letter-spacing: 1px; 
+  border-radius: 25px;
+  border: 1px solid #7a7a7a;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+QPushButton:hover {
+	background-color: rgb(231, 211, 203)
+}
+
+QPushButton:pressed {
+	background-color: rgb(232, 224, 224)
+}</string>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>250</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 300 10pt &quot;Segoe UI Light&quot;;
+  	letter-spacing: 1px;	
+	font: 300 italic 26pt &quot;Segoe UI&quot;;
+	color: rgb(177, 160, 158);
+	background-color: rgb(232, 224, 224)
+}</string>
+    </property>
+    <property name="text">
+     <string>Create Account</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="registerFrame_usernameLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>306</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="registerFrame_passwordLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>355</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>330</y>
+      <width>65</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 300 10pt &quot;Segoe UI Light&quot;;
+  	letter-spacing: 1px;	
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>205</x>
+      <y>430</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 300 10pt &quot;Segoe UI Light&quot;;
+  	letter-spacing: 1px;	
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string>Confirm Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="registerFrame_confirmpasswordLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>405</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	background-color: rgb(232, 224, 224);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
