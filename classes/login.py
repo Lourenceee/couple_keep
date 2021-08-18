@@ -9,7 +9,8 @@ class Login(QDialog):
         loadUi("ui/loginFrame.ui", self)
         self.loginFrame_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
         self.loginFrame_loginButton.clicked.connect(self.loginFunction)        
-    
+        self.loginFrame_createButton.clicked.connect(self.createFunction)  
+
     def loginFunction(self):
         Loginmsg = QMessageBox()
 
@@ -34,16 +35,19 @@ class Login(QDialog):
             Loginmsg.setWindowTitle("Warning")
             Loginmsg.setText("Incorrect Credentials")
             Loginmsg.setIcon(QMessageBox.Critical)
-            x = Loginmsg.exec_()        
+            x = Loginmsg.exec_()   
+
+    def createFunction(self):
+        pass     
 
 
 app = QApplication(sys.argv)
 loginWindow = Login()
-widget = QtWidgets.QStackedWidget()
-widget.addWidget(loginWindow)
-widget.setFixedWidth(400)
-widget.setFixedHeight(600)
-widget.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-widget.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-widget.show()
+loginFrame = QtWidgets.QStackedWidget()
+loginFrame.addWidget(loginWindow)
+loginFrame.setFixedWidth(400)
+loginFrame.setFixedHeight(600)
+# loginFrame.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+# loginFrame.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+loginFrame.show()
 app.exec()
