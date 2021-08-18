@@ -38,7 +38,7 @@ class Login(QDialog):
             x = Loginmsg.exec_()   
 
     def createFunction(self):
-        pass     
+        pass
 
 
 app = QApplication(sys.argv)

@@ -41,7 +41,7 @@
      <x>115</x>
      <y>276</y>
      <width>171</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -79,6 +79,14 @@
   padding: 20px; 
   width: 200px;
   height: 150px;  
+}
+
+QPushButton:hover {
+	background-color: rgb(231, 211, 203)
+}
+
+QPushButton:pressed {
+	background-color: rgb(232, 224, 224)
 }</string>
    </property>
    <property name="text">
@@ -122,6 +130,14 @@
   padding: 20px; 
   width: 200px;
   height: 150px;  
+}
+
+QPushButton:hover {
+	background-color: rgb(231, 211, 203)
+}
+
+QPushButton:pressed {
+	background-color: rgb(232, 224, 224)
 }</string>
    </property>
    <property name="text">
