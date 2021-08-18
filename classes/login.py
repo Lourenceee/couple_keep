@@ -2,6 +2,7 @@ import sys
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QMessageBox
 from PyQt5.uic import loadUi
+from classes.create import Create
 
 class Login(QDialog):
     def __init__(self):
@@ -38,6 +39,9 @@ class Login(QDialog):
             x = Loginmsg.exec_()   
 
     def createFunction(self):
+        createL = Create()
+        createFrame.addWidget(createL)
+        createFrame.setCurrentIndex(createFrame.setCurrentIndex() + 1)
         pass
 
 
