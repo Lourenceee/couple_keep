@@ -41,6 +41,8 @@ class Login(QDialog):
     def createFunction(self):
         create = Create()
         window.addWidget(create)
+        window.setFixedWidth(504)
+        window.setFixedHeight(604)
         window.setCurrentIndex(window.currentIndex() + 1)
 
 
@@ -48,9 +50,9 @@ app = QApplication(sys.argv)
 loginWindow = Login()
 window = QtWidgets.QStackedWidget()
 window.addWidget(loginWindow)
-window.setFixedWidth(400)
-window.setFixedHeight(600)
-# loginFrame.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-# loginFrame.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+window.setFixedWidth(404)
+window.setFixedHeight(604)
+# window.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+# window.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 window.show()
 app.exec()
