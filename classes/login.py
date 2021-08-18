@@ -6,31 +6,31 @@ from PyQt5.uic import loadUi
 class Login(QDialog):
     def __init__(self):
         super(Login, self).__init__()
-        loadUi("ui/loginForm.ui", self)
-        self.loginForm_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.loginForm_loginButton.clicked.connect(self.loginFunction)        
+        loadUi("ui/loginFrame.ui", self)
+        self.loginFrame_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.loginFrame_loginButton.clicked.connect(self.loginFunction)        
     
     def loginFunction(self):
         Loginmsg = QMessageBox()
 
-        if self.loginForm_usernameLineEdit.text() == "" and self.loginForm_passwordLineEdit.text() == "":
+        if self.loginFrame_usernameLineEdit.text() == "" and self.loginFrame_passwordLineEdit.text() == "":
             Loginmsg.setWindowTitle("Information")
             Loginmsg.setText("Please fill the blanks!")
             Loginmsg.setIcon(QMessageBox.Information)
             x = Loginmsg.exec_()
-        elif self.loginForm_usernameLineEdit.text() == "":
+        elif self.loginFrame_usernameLineEdit.text() == "":
             Loginmsg.setWindowTitle("Information")
             Loginmsg.setText("Username is Empty")
             Loginmsg.setIcon(QMessageBox.Information)
             x = Loginmsg.exec_()
-        elif self.loginForm_passwordLineEdit.text() == "":
+        elif self.loginFrame_passwordLineEdit.text() == "":
             Loginmsg.setWindowTitle("Information")
             Loginmsg.setText("Password is Empty")
             Loginmsg.setIcon(QMessageBox.Information)
             x = Loginmsg.exec_()
-        elif self.loginForm_usernameLineEdit.text() == "masie" and self.loginForm_passwordLineEdit.text() == "jake":            
+        elif self.loginFrame_usernameLineEdit.text() == "masie" and self.loginFrame_passwordLineEdit.text() == "jake":            
             print('Successfully logged In!!')
-        elif self.loginForm_usernameLineEdit.text() != "masie" or self.loginForm_passwordLineEdit.text() != "jake":
+        elif self.loginFrame_usernameLineEdit.text() != "masie" or self.loginFrame_passwordLineEdit.text() != "jake":
             Loginmsg.setWindowTitle("Warning")
             Loginmsg.setText("Incorrect Credentials")
             Loginmsg.setIcon(QMessageBox.Critical)

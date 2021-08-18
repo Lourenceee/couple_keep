@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QLabel" name="loginForm_background">
+  <widget class="QLabel" name="loginFrame_background">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -35,7 +35,7 @@
     <pixmap>../img/loginform/fbackgroundlabels.png</pixmap>
    </property>
   </widget>
-  <widget class="QLineEdit" name="loginForm_usernameLineEdit">
+  <widget class="QLineEdit" name="loginFrame_usernameLineEdit">
    <property name="geometry">
     <rect>
      <x>115</x>
@@ -44,8 +44,11 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
   </widget>
-  <widget class="QLineEdit" name="loginForm_passwordLineEdit">
+  <widget class="QLineEdit" name="loginFrame_passwordLineEdit">
    <property name="geometry">
     <rect>
      <x>115</x>
@@ -55,17 +58,25 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="loginForm_loginButton">
+  <widget class="QPushButton" name="loginFrame_loginButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>420</y>
+     <x>162</x>
+     <y>410</y>
      <width>75</width>
      <height>24</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QPushButton {
+  font: 300 10pt &quot;Segoe UI Light&quot;;
+  letter-spacing: 1px; 
+  border-radius: 25px;
+  border: 1px solid #7a7a7a;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}</string>
    </property>
    <property name="text">
     <string>Login</string>
@@ -88,10 +99,10 @@
    </property>
   </widget>
   <zorder>frame</zorder>
-  <zorder>loginForm_background</zorder>
-  <zorder>loginForm_usernameLineEdit</zorder>
-  <zorder>loginForm_passwordLineEdit</zorder>
-  <zorder>loginForm_loginButton</zorder>
+  <zorder>loginFrame_background</zorder>
+  <zorder>loginFrame_usernameLineEdit</zorder>
+  <zorder>loginFrame_passwordLineEdit</zorder>
+  <zorder>loginFrame_loginButton</zorder>
  </widget>
  <resources/>
  <connections/>
