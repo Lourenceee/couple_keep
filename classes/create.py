@@ -17,6 +17,5 @@ class Create(QDialog):
         mycursor = mydb.cursor()
         sql = f"INSERT INTO accounts (db_username, db_password) VALUES ('{self.registerFrame_usernameLineEdit.text()}', '{self.registerFrame_passwordLineEdit.text()}')"      
         mycursor.execute(sql)
-        mydb.commit()
 
-        print(mycursor.execute(sql))
+        print("added")
