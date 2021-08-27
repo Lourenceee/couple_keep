@@ -1,15 +1,19 @@
 import sys
+import mysql.connector
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QMessageBox
 from PyQt5.uic import loadUi
+
+#imports
 from classes.create import Create
+from database.database import mydb 
 
 class Login(QDialog):
     def __init__(self):
         super(Login, self).__init__()
         loadUi("ui/loginFrame.ui", self)
         self.loginFrame_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.loginFrame_loginButton.clicked.connect(self.loginFunction)        
+        self.loginFrame_loginButton.clicked.connect(self.dbLogin)        
         self.loginFrame_createButton.clicked.connect(self.createFunction)  
 
     def loginFunction(self):
@@ -37,6 +41,17 @@ class Login(QDialog):
             Loginmsg.setText("Incorrect Credentials")
             Loginmsg.setIcon(QMessageBox.Critical)
             x = Loginmsg.exec_()   
+    
+    def dbLogin(self):
+        mycursor = mydb.cursor()
+        sql = "SELECT * FROM accounts WHERE BINARY db_username = '%s' AND BINARY db_password = '%s'" % (self.loginFrame_usernameLineEdit.text(), self.loginFrame_passwordLineEdit.text())
+
+        mycursor.execute(sql)
+
+        if mycursor.fetchone():
+            print('Successfully logged In!!')
+        else:
+            print('Nanik!')
 
     def createFunction(self):
         create = Create()
