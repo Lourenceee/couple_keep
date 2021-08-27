@@ -7,7 +7,6 @@ class Create(QDialog):
     def __init__(self):
         super(Create, self).__init__()
         loadUi("ui/registerFrame.ui", self)
-        self.loginFrame_createButton.clicked.connect(self.createFunction)
     
     def submitFunction(self):
         pass
