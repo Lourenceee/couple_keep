@@ -13,36 +13,12 @@ class Login(QDialog):
         super(Login, self).__init__()
         loadUi("ui/loginFrame.ui", self)
         self.loginFrame_passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.loginFrame_loginButton.clicked.connect(self.dbLogin)        
+        self.loginFrame_loginButton.clicked.connect(self.loginFunction)        
         self.loginFrame_createButton.clicked.connect(self.createFunction)  
 
     def loginFunction(self):
         Loginmsg = QMessageBox()
 
-        if self.loginFrame_usernameLineEdit.text() == "" and self.loginFrame_passwordLineEdit.text() == "":
-            Loginmsg.setWindowTitle("Information")
-            Loginmsg.setText("Please fill the blanks!")
-            Loginmsg.setIcon(QMessageBox.Information)
-            x = Loginmsg.exec_()
-        elif self.loginFrame_usernameLineEdit.text() == "":
-            Loginmsg.setWindowTitle("Information")
-            Loginmsg.setText("Username is Empty")
-            Loginmsg.setIcon(QMessageBox.Information)
-            x = Loginmsg.exec_()
-        elif self.loginFrame_passwordLineEdit.text() == "":
-            Loginmsg.setWindowTitle("Information")
-            Loginmsg.setText("Password is Empty")
-            Loginmsg.setIcon(QMessageBox.Information)
-            x = Loginmsg.exec_()
-        elif self.loginFrame_usernameLineEdit.text() == "masie" and self.loginFrame_passwordLineEdit.text() == "jake":            
-            print('Successfully logged In!!')
-        elif self.loginFrame_usernameLineEdit.text() != "masie" or self.loginFrame_passwordLineEdit.text() != "jake":
-            Loginmsg.setWindowTitle("Warning")
-            Loginmsg.setText("Incorrect Credentials")
-            Loginmsg.setIcon(QMessageBox.Critical)
-            x = Loginmsg.exec_()   
-    
-    def dbLogin(self):
         mycursor = mydb.cursor()
         sql = "SELECT * FROM accounts WHERE BINARY db_username = '%s' AND BINARY db_password = '%s'" % (self.loginFrame_usernameLineEdit.text(), self.loginFrame_passwordLineEdit.text())
 
@@ -50,8 +26,30 @@ class Login(QDialog):
 
         if mycursor.fetchone():
             print('Successfully logged In!!')
+
+        elif self.loginFrame_usernameLineEdit.text() == "" and self.loginFrame_passwordLineEdit.text() == "":
+            Loginmsg.setWindowTitle("Information")
+            Loginmsg.setText("Please fill the blanks!")
+            Loginmsg.setIcon(QMessageBox.Information)
+            x = Loginmsg.exec_()
+
+        elif self.loginFrame_usernameLineEdit.text() == "":
+            Loginmsg.setWindowTitle("Information")
+            Loginmsg.setText("Username is Empty")
+            Loginmsg.setIcon(QMessageBox.Information)
+            x = Loginmsg.exec_()
+
+        elif self.loginFrame_passwordLineEdit.text() == "":
+            Loginmsg.setWindowTitle("Information")
+            Loginmsg.setText("Password is Empty")
+            Loginmsg.setIcon(QMessageBox.Information)
+            x = Loginmsg.exec_()
+            
         else:
-            print('Nanik!')
+            Loginmsg.setWindowTitle("Warning")
+            Loginmsg.setText("Incorrect Credentials")
+            Loginmsg.setIcon(QMessageBox.Critical)
+            x = Loginmsg.exec_()
 
     def createFunction(self):
         create = Create()
