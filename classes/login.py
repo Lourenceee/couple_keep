@@ -20,8 +20,7 @@ class Login(QDialog):
         Loginmsg = QMessageBox()
 
         mycursor = mydb.cursor()
-        sql = "SELECT * FROM accounts WHERE BINARY db_username = '%s' AND BINARY db_password = '%s'" % (self.loginFrame_usernameLineEdit.text(), self.loginFrame_passwordLineEdit.text())
-
+        sql = "SELECT * FROM users_accounts WHERE BINARY db_username = '%s' AND BINARY db_password = '%s'" % (self.loginFrame_usernameLineEdit.text(), self.loginFrame_passwordLineEdit.text())
         mycursor.execute(sql)
 
         if mycursor.fetchone():
