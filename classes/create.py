@@ -16,6 +16,12 @@ class Create(QDialog):
     def submitFunction(self):
         mycursor = mydb.cursor()
         sql = f"INSERT INTO accounts (db_username, db_password) VALUES ('{self.registerFrame_usernameLineEdit.text()}', '{self.registerFrame_passwordLineEdit.text()}')"      
-        mycursor.execute(sql)
 
-        print("added")
+        try:
+            mycursor.execute(sql)
+            mydb.commit()
+        except:
+            mydb.rollback()
+
+        print("Data inserted")
+        mycursor.close()
