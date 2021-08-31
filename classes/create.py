@@ -25,7 +25,7 @@ class Create(QDialog):
         print("Data inserted")
         print(sql)
         mycursor.close()
-
+        
     def checkingDuplicateAccounts(self):
         createmsg = QMessageBox()
         mycursor = mydb.cursor()

@@ -57,11 +57,16 @@ class Login(QDialog):
         window.setFixedHeight(604)
         window.setCurrentIndex(window.currentIndex() + 1)
 
+        
+
 
 app = QApplication(sys.argv)
 loginWindow = Login()
 window = QtWidgets.QStackedWidget()
 window.addWidget(loginWindow)
+
+create = Create()
+window.addWidget(create)
 window.setFixedWidth(404)
 window.setFixedHeight(604)
 # window.setWindowFlags(QtCore.Qt.FramelessWindowHint)

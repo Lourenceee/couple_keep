@@ -70,8 +70,8 @@
    <widget class="QPushButton" name="registerFrame_submitButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>540</y>
+      <x>270</x>
+      <y>530</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -255,6 +255,42 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="registerFrame_cancelButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>530</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: rgb(232, 224, 224);
+  font: 300 10pt &quot;Segoe UI Light&quot;;
+  letter-spacing: 1px; 
+  border-radius: 25px;
+  border: 1px solid #7a7a7a;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+QPushButton:hover {
+	background-color: rgb(231, 211, 203)
+}
+
+QPushButton:pressed {
+	background-color: rgb(232, 224, 224)
+}</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
     </property>
    </widget>
   </widget>
