@@ -12,5 +12,6 @@ python3 -m venv venv (or env)
 pip3 install -r requirements.txt
 
 # Run the program
+chmod +x main.py
 python3 main.py
 ```
