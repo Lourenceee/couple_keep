@@ -32,3 +32,5 @@ class Rules():
 
 if __name__ == "__main__":
     Rules.fromjeiku()
+
+#testing webhooks / discord server
