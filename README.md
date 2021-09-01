@@ -9,7 +9,7 @@
 </div>
 
 ## Setting up
-
+### Unix-like
 ```sh
 # Git clone the repo. Note: You do need your Personal Access Token for this, otherwise simply download the zip file.
 git clone https://<Token>@github.com/Lourenceee/couple_keep.git
@@ -19,6 +19,10 @@ python3 -m venv venv (or env)
 
 # Install the dependencies.
 pip3 install -r requirements.txt
+
+# Setup mysql server
+mysql -u <user> -p
+CREATE DATABASE couple_keep_db
 
 # Run the program
 chmod +x main.py
