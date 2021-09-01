@@ -1,4 +1,8 @@
 # couple_keep
+[![python](https://img.shields.io/badge/Made_with-Python-c74c34?labelColor=23261f&logo=python&logoColor=c74c34)](https://python.org)
+[![python](https://img.shields.io/badge/Made_with-PyQt5-c74c34?labelColor=23261f&logo=python&logoColor=c74c34)](https://python.org)
+[![python](https://img.shields.io/badge/License-GPL3-c74c34?labelColor=23261f&logo=gnu&logoColor=c74c34)](https://python.org)
+
 
 ## Setting up
 ```sh
